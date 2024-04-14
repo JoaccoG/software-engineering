@@ -56,4 +56,12 @@ describe('Given a Stack data structure', () => {
       expect(testStack.isEmpty()).toBe(true);
     });
   });
+
+  describe('When we want to clear the Stack', () => {
+    test('Then it should remove all items from the Stack', () => {
+      testStack.push(1, 2, 3);
+      testStack.clear();
+      expect(testStack.isEmpty()).toBe(true);
+    });
+  });
 });
