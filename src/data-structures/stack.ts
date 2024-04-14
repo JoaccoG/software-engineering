@@ -14,4 +14,8 @@ export class Stack<T> {
   push(item: T): void {
     this.#items.push(item);
   }
+
+  pop(): T | undefined {
+    return this.#items.pop();
+  }
 }
