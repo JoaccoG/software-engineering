@@ -46,4 +46,14 @@ describe('Given a Stack data structure', () => {
       expect(testStack.size()).toBe(6);
     });
   });
+
+  describe('When we want to know if the Stack is empty', () => {
+    test('Then it should return true if the Stack is empty, false otherwise', () => {
+      expect(testStack.isEmpty()).toBe(true);
+      testStack.push(1);
+      expect(testStack.isEmpty()).toBe(false);
+      testStack.pop();
+      expect(testStack.isEmpty()).toBe(true);
+    });
+  });
 });
