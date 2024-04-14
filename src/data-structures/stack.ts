@@ -6,16 +6,21 @@ export class Stack<T> {
   }
 
   peek(): T | undefined {
-    return this.#items.length === 0
-      ? undefined
-      : this.#items[this.#items.length - 1];
+    return this.size() === 0 ? undefined : this.#items[this.size() - 1];
   }
 
-  push(item: T): void {
-    this.#items.push(item);
+  push(...items: T[]): number {
+    for (const item of items) {
+      this.#items.push(item);
+    }
+    return this.size();
   }
 
   pop(): T | undefined {
     return this.#items.pop();
+  }
+
+  size(): number {
+    return this.#items.length;
   }
 }
