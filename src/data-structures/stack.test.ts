@@ -24,4 +24,12 @@ describe('Given a Stack data structure', () => {
       expect(testStack.peek()).toEqual([1, 2, 3]);
     });
   });
+
+  describe('When an item is popped from the Stack', () => {
+    test('Then the item should be removed from the Stack', () => {
+      testStack.push([1, 2, 3]);
+      expect(testStack.pop()).toEqual([1, 2, 3]);
+      expect(testStack.peek()).toBeUndefined();
+    });
+  });
 });
