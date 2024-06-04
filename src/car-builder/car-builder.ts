@@ -5,8 +5,8 @@ class CarBuilder implements Builder<Car> {
 
   constructor() {
     this.#car = {
-      model: '',
-      color: '',
+      model: '911 GTX',
+      color: 'red',
       transmission: Transmission.MANUAL,
       motor: Motor.FUEL,
       extras: new Set(),
