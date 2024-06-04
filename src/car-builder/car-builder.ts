@@ -29,7 +29,7 @@ class CarBuilder implements Builder<Car> {
     this.#car.motor = motor;
     return this;
   }
-  withExtras(...extras: Extras[]): this {
+  addExtras(...extras: Extras[]): this {
     extras.forEach((extra) => this.#car.extras.add(extra));
     return this;
   }

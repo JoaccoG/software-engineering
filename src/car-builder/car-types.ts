@@ -1,10 +1,10 @@
-export interface Builder {
+export interface Builder<T> {
   withModel(model: string): this;
   withColor(color: string): this;
   withTransmission(transmission: Transmission): this;
   withMotor(motor: Motor): this;
-  withExtras(extras: Extras): this;
-  build(): unknown;
+  addExtras(...extras: Extras[]): this;
+  build(): T;
 }
 
 export enum Transmission {
@@ -29,5 +29,5 @@ export type Car = {
   color: string;
   transmission: Transmission;
   motor: Motor;
-  extras: Extras[];
+  extras: Set<Extras>;
 };
